@@ -1,5 +1,133 @@
+<style>
+  .section.is-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .popup {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    max-width: 786px;
+    min-height: 450px;
+    box-shadow: 13px 15px 20px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .popup-graphic-wrapper {
+    width: 40%;
+  }
+
+  .popup-graphic {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .popup-text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60%;
+    padding: 60px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .heading-style-4 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .popup-heading {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 46px;
+    line-height: 52px;
+    font-weight: 700;
+  }
+
+  .popup-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #36ade2;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .popup-link {
+    display: block;
+    margin-top: 15px;
+    color: #36ade2;
+    text-decoration: none;
+  }
+</style>
+
+<div style="height: 300vh"></div>
+
+<div class="section is-popup">
+  <div class="popup">
+    <div class="popup-graphic-wrapper">
+      <img
+        src="https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash.jpg"
+        loading="lazy"
+        sizes="100vw"
+        srcset="
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-500.jpg   500w,
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-800.jpg   800w,
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-1080.jpg 1080w,
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-1600.jpg 1600w,
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-2000.jpg 2000w,
+          https://uploads-ssl.webflow.com/638f893688317ede71723ba6/6390c601fb274426d5c11614_oyemike-princewill-N9fGkZBXNvY-unsplash-p-2600.jpg 2600w
+        "
+        alt=""
+        class="popup-graphic"
+      />
+    </div>
+    <div class="popup-text">
+      <div class="heading-style-4">Save Up To</div>
+      <div class="popup-heading">60% Off</div>
+      <div>When You Register Today</div>
+      <a href="#" class="popup-button w-button">Register Now</a><a href="#" class="popup-link">No Thanks</a>
+    </div>
+  </div>
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    alert("document is done loading");
+    setTimeout(() => {
+      document.querySelector(".section.is-popup").style.display = "flex";
+      document.querySelector("body").style.overflowY = "hidden";
+    }, 3000);
+
+    document.querySelector(".popup-link").onclick = (e) => {
+      document.querySelector(".section.is-popup").style.display = "none";
+      document.querySelector("body").style.overflowY = "auto";
+    };
   });
 </script>
